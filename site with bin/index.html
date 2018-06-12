@@ -32,6 +32,12 @@
                         <a class="nav-link smooth" href="#contacts">Contacts</a>
                     </li>
                 </ul>
+                <div>
+                    <a class="nav-link" href="#cartModal" data-toggle="modal">
+                      <i class="fab fa-opencart fa-spin" aria-hidden="true"></i>
+                        Cart<span id="cart-badge" class="badge badge-light"></span>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
@@ -51,11 +57,9 @@
                     </p>
                   </div>    
                 </div>
-
                 <div class="carousel-item">
                   <img class="d-block w-100" src="img/products/tesla-x.jpg" alt="Tesla X">
                 </div>
-
                 <div class="carousel-item">
                   <img class="d-block w-100" src="img/products/drone-blue.jpg" alt="Blue drone">
                 </div>
@@ -72,31 +76,6 @@
             </div>
         </div>
 
-        <div class="container mb-2">
-          <p>Наявн лоти</p>
-          <table>
-           <colgroup span="4"></colgroup>
-           <tr>
-             <th>Наявний лот</th>
-             <th>Цына</th>
-             <th>Population</th>
-             <th>Language</th>
-           </tr>
-           <tr>
-             <td>Corei7</td>
-             <td>Washington, D.C.</td>
-             <td>309 million</td>
-             <td>English</td>
-           </tr>
-           <tr>
-             <td>Sweden</td>
-             <td>Stockholm</td>
-             <td>9 million</td>
-             <td>Swedish</td>
-           </tr>
-          </table>
-        </div>
-
         </div>
         <section>
             <h2 id="products">Products</h2>
@@ -108,21 +87,66 @@
     
     <footer class="container">
       <h2 id="contacts">Contact us</h2>
-
-      <address>
-      <p>Email <b>slemqne@gmail.com</b></p>
-        
-        <a href="mailto:slemqne@gmail.com" Stanislav</a><br> 
-        Lviv<br>
-        Ukraine
-      </address>
-      <p>
-        Tel<a href="tel:0932341369">&nbsp093 234 1369</a>
-      </p>
+      <p>Somewhere on the planet Earth...</p>
     </footer>
     
 
- 
+    <!-- Modal Product Info -->
+    <div class="modal fade" id="productInfoModal" tabindex="-1" role="dialog" aria-labelledby="productInfoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productInfoLabel">Product Info</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <img class="card-img-top" src="" alt="">
+              <h4 class="card-title"></h4>
+              <p class="card-text"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary buy" data-id="id">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal Cart -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartLabel">Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="cart-product-list-container"></div>
+            <hr>
+            <div class="container">
+              <form>
+                <div class="form-group row">
+                  <label for="client-name" class="col-4 col-form-label">Your name:</label>
+                  <input class="form-control col-8" type="text" id="client-name" required>
+                </div>
+                <div class="form-group row">
+                  <label for="client-email" class="col-4 col-form-label">Your email:</label>
+                  <input class="form-control col-8" type="email" id="client-email" required>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary order">Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
@@ -131,7 +155,7 @@
 
     <script async src="js/smooth-scroll.js"></script>
     <script async src="js/alert-window.js"></script>
-    
+    <script defer src="js/cart.js"></script>
     <script defer src="js/product-list.js"></script>    
     <script defer src="js/index.js"></script>
 </body>

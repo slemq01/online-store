@@ -26,15 +26,3 @@
 .btn {
     padding: 0.75rem 0.7rem;
 }
-
-table
-{
-border-collapse: collapse;
-border-spacing: 0px;
-}
-table, th, td
-{
-padding: 5px;
-border: 1px solid black;
-text-transform: none;
-}

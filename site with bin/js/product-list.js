@@ -1,6 +1,6 @@
 class ProductList {
-    constructor (productsUrl, renderContainer) {
-       
+    constructor (productsUrl, renderContainer, cart) {
+        this.cart = cart;
         fetch(productsUrl)
             .then(result => result.json() )
             .then(products => {
